@@ -1,0 +1,11 @@
+numpy
+torch
+torchvision
+torchaudio
+coremltools
+tensorflow
+tensorflow-metal
+seaborn
+sklearn
+scikit-learn
+tensorboard
