@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Script: testing_models.py
+Description:    This script is used to test the models created in the main.py script.
+                It compares the results of the models created in PyTorch and CoreML.
+                I've created this to find out why the models were not giving the same results.
+Author: Felipe Andrade
+Date Created: 21-09-2024
+Usage: python3 main.py
+License: MIT License
+"""
+
 import torch
 import numpy as np
 from PIL import Image
@@ -6,23 +20,23 @@ from torchvision import transforms
 
 model_version = "v005"
 models = ["resnet152", "efficientnet_b0"]
-model_architecture = models[0]
+model_architecture = models[0] #
 model_filename = f"Model_{model_architecture}_{model_version}"
 
 img = Image.open('../Data/AffectNet/train/3/Training_87867.jpg')
-
 class_names = ['Raiva', 'Nojo', 'Medo', 'Felicidade', 'Tristeza', 'Surpresa', 'Neutro', 'Desprezo']
 
+# Carregamento dos modelos
 def load_models():
     print("Loading models")
     coreml_model = ct.models.MLModel(f"../Models/{model_filename}.mlmodel")
     pytorch_model = torch.jit.load(f"../Models/{model_filename}.pt")
     return coreml_model, pytorch_model
 
+# Roda a avaliação do modelo CoreML
 def run_coreml_evaluation():
     print("Running coreml evaluation")
-    # Define the transformations used during training
-    img_converted = img.convert("L") # Convert to grayscale
+    img_converted = img.convert("L") # Converte para escala de cinza
     img_converted = img_converted.convert("RGB")
     img_converted = img_converted.resize((48, 48))
 
@@ -34,11 +48,12 @@ def run_coreml_evaluation():
     predicted_expression = class_names[max_index]
     return predicted_expression
 
+# Roda a avaliação do modelo PyTorch
 def run_evaluation():
     print("Running evaluation")
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
-    # Define the transformations used during training
+    # Define as transformações utilizadas durante o treinamento
     transform = transforms.Compose([
         transforms.Grayscale(num_output_channels=3),
         transforms.Resize(48),
