@@ -2,4 +2,4 @@
 *.mlmodel
 .DS_Store
 Data/AffectNet/*/*/*.jpg
-Runs/*
+Runs/fine_tuning_experiment/*
