@@ -3,3 +3,94 @@
 .DS_Store
 Data/AffectNet/*/*/*.jpg
 Runs/fine_tuning_experiment/*
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode specific files
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# Xcode 8 and later
+*.xccodecache
+
+# Objective-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Archives
+*.xcarchive
+
+# Generated files
+*.xcworkspace
+!default.xcworkspace
+*.xcodeproj/project.xcworkspace/
+
+
+# Code signing
+*.key
+*.mobileprovision
+*.cer
+*.crt
+*.pem
+
+# App Icons
+# *.xcassets automatically includes original icon (no need to ignore)
+# Icon?.png  # May conflict with other icon naming conventions
+
+# Swift Package Manager
+# Package.pins
+# Package.resolved
+# Package.swift
+
+# Swift PM specific
+.build/
+
+# Xcode custom templates
+# Templates/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Temporary
+*.tmp
+*.temp
+*.swp
+
+# Other exclusions
+*.plist
+*.rsync
+
+# Breakpoint/Profiling
+*.breakpoints
+*.scpt
+*.cplist
+*.trace
+
+# SPM Packages
+.swiftpm/
+
+# Project specific
+*.orig
+*.crt
+*.cer
+*.swp
+*.DS_Store
+*.xcuserstate
