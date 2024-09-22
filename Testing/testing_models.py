@@ -18,12 +18,12 @@ from PIL import Image
 import coremltools as ct
 from torchvision import transforms
 
-model_version = "v005"
+model_version = "v006"
 models = ["resnet152", "efficientnet_b0"]
 model_architecture = models[0] #
 model_filename = f"Model_{model_architecture}_{model_version}"
 
-img = Image.open('../Data/AffectNet/train/3/Training_87867.jpg')
+img = Image.open('../Data/AffectNet/train/3/image0000045.jpg')
 class_names = ['Raiva', 'Nojo', 'Medo', 'Felicidade', 'Tristeza', 'Surpresa', 'Neutro', 'Desprezo']
 
 # Carregamento dos modelos

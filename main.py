@@ -150,7 +150,7 @@ if __name__ == '__main__':
     # Definição do modelo a ser utilizado
     model_name = "resnet152"
     num_epochs = 100
-    model_version = "v005"
+    model_version = "v006"
     model_filename = f"Model_{model_name}_{model_version}"
 
     # Carregamento do modelo
@@ -181,7 +181,7 @@ if __name__ == '__main__':
 
     # Inicializa o treinamento do modelo
     # SummaryWriter é utilizado para visualizar o treinamento no TensorBoard
-    writer = SummaryWriter(log_dir="runs/fine_tuning_experiment")
+    writer = SummaryWriter(log_dir="./Runs/fine_tuning_experiment")
     model_ft = train_model(model, criterion, optimizer, dataloaders, device, num_epochs=num_epochs)
     
     # Depois do treino, avalia o modelo
