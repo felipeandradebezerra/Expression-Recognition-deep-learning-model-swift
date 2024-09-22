@@ -1,3 +1,4 @@
 *.pt
 *.mlmodel
 .DS_Store
+Data/AffectNet/*/*/*.jpg
